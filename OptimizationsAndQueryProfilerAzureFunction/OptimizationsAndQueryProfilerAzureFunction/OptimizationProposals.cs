@@ -8,7 +8,7 @@ using QueryProfiler;
 using System.Collections.Generic;
 
 namespace OptimizationsAndQueryProfilerAzureFunction
-{
+{//pr
     public static class OptimizationProposals
     {
         [FunctionName("GetOptimizationProposalsForQuery")]
