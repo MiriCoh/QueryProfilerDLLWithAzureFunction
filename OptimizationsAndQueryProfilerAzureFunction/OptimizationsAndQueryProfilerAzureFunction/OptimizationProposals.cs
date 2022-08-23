@@ -6,6 +6,7 @@ using QueryProfiler.Optimization;
 using QueryProfiler.Profile;
 using QueryProfiler;
 using System.Collections.Generic;
+using Microsoft.AspNetCore.Http;
 
 namespace OptimizationsAndQueryProfilerAzureFunction
 {//pr
@@ -13,7 +14,7 @@ namespace OptimizationsAndQueryProfilerAzureFunction
     {
         [FunctionName("GetOptimizationProposalsForQuery")]
         public static async Task<List<ProposalScheme>> Run(
-         [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "GetOptimizationProposalsForQuery/{query}")] string query,
+         [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "GetOptimizationProposalsForQuery/{query}")] HttpRequest req, string query,
          ILogger log)
         {
             log.LogInformation("C# HTTP trigger function GetOptimizationProposalsForQuery processed a request.");
